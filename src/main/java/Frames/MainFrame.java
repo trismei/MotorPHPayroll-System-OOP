@@ -4,7 +4,6 @@
  */
 package Frames;
 
-import com.mycompany.OOP.AttendanceTracking.Attendance;
 import com.mycompany.OOP.LeaveManagement.LeaveFrame;
 import com.mycompany.OOP.EmployeeVerification.ViewRecordFrame;
 import com.mycompany.OOP.EmployeeVerification.AddEmployeeFrame;
@@ -54,13 +53,12 @@ public class MainFrame extends javax.swing.JDialog {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         table1 = new javax.swing.JTable();
-        Attendance = new javax.swing.JButton();
+        viewbtn = new javax.swing.JButton();
         addbtn = new javax.swing.JButton();
         payslipbtn = new javax.swing.JButton();
         leavebtn = new javax.swing.JButton();
         deletebtn = new javax.swing.JButton();
         exitbtn = new javax.swing.JButton();
-        viewbtn1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -69,6 +67,7 @@ public class MainFrame extends javax.swing.JDialog {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        table1.setFont(new java.awt.Font("Helvetica", 0, 12)); // NOI18N
         table1.setForeground(new java.awt.Color(51, 51, 51));
         table1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -97,42 +96,37 @@ public class MainFrame extends javax.swing.JDialog {
             table1.getColumnModel().getColumn(0).setPreferredWidth(100);
         }
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 870, 180));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 840, 260));
 
-        Attendance.setBackground(new java.awt.Color(0, 0, 102));
-        Attendance.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Attendance.setForeground(new java.awt.Color(255, 255, 255));
-        Attendance.setText("Attendance Record");
-        Attendance.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Attendance.addMouseListener(new java.awt.event.MouseAdapter() {
+        viewbtn.setBackground(new java.awt.Color(235, 173, 25));
+        viewbtn.setFont(new java.awt.Font("Thonburi", 0, 12)); // NOI18N
+        viewbtn.setForeground(new java.awt.Color(255, 255, 255));
+        viewbtn.setText("View and Update Record");
+        viewbtn.setBorder(null);
+        viewbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AttendanceMouseClicked(evt);
+                viewbtnMouseClicked(evt);
             }
         });
-        Attendance.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AttendanceActionPerformed(evt);
-            }
-        });
-        jPanel2.add(Attendance, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 270, 160, 30));
+        jPanel2.add(viewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 510, 160, 30));
 
-        addbtn.setBackground(new java.awt.Color(0, 0, 102));
-        addbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        addbtn.setBackground(new java.awt.Color(235, 173, 25));
+        addbtn.setFont(new java.awt.Font("Thonburi", 0, 12)); // NOI18N
         addbtn.setForeground(new java.awt.Color(255, 255, 255));
         addbtn.setText("Add Record");
-        addbtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        addbtn.setBorder(null);
         addbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 AddEmployee(evt);
             }
         });
-        jPanel2.add(addbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 161, 30));
+        jPanel2.add(addbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, 161, 30));
 
-        payslipbtn.setBackground(new java.awt.Color(0, 0, 102));
-        payslipbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        payslipbtn.setBackground(new java.awt.Color(235, 173, 25));
+        payslipbtn.setFont(new java.awt.Font("Thonburi", 0, 12)); // NOI18N
         payslipbtn.setForeground(new java.awt.Color(255, 255, 255));
         payslipbtn.setText("Generate Payslip");
-        payslipbtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        payslipbtn.setBorder(null);
         payslipbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 PaySlip(evt);
@@ -143,79 +137,63 @@ public class MainFrame extends javax.swing.JDialog {
                 payslipbtnActionPerformed(evt);
             }
         });
-        jPanel2.add(payslipbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 161, 30));
+        jPanel2.add(payslipbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, 161, 30));
 
-        leavebtn.setBackground(new java.awt.Color(0, 0, 102));
-        leavebtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        leavebtn.setBackground(new java.awt.Color(235, 173, 25));
+        leavebtn.setFont(new java.awt.Font("Thonburi", 0, 12)); // NOI18N
         leavebtn.setForeground(new java.awt.Color(255, 255, 255));
         leavebtn.setText("Apply for Leave");
-        leavebtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        leavebtn.setBorder(null);
         leavebtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 leavebtnMouseClicked(evt);
             }
         });
-        jPanel2.add(leavebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 161, 30));
+        jPanel2.add(leavebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, 161, 30));
 
-        deletebtn.setBackground(new java.awt.Color(0, 0, 102));
-        deletebtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        deletebtn.setBackground(new java.awt.Color(235, 173, 25));
+        deletebtn.setFont(new java.awt.Font("Thonburi", 0, 12)); // NOI18N
         deletebtn.setForeground(new java.awt.Color(255, 255, 255));
         deletebtn.setText("Delete Record");
-        deletebtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        deletebtn.setBorder(null);
         deletebtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DeleteRecord(evt);
             }
         });
-        deletebtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deletebtnActionPerformed(evt);
-            }
-        });
-        jPanel2.add(deletebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 161, 30));
+        jPanel2.add(deletebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 161, 30));
 
-        exitbtn.setBackground(new java.awt.Color(153, 0, 0));
-        exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        exitbtn.setBackground(new java.awt.Color(171, 2, 2));
+        exitbtn.setFont(new java.awt.Font("Thonburi", 0, 12)); // NOI18N
         exitbtn.setForeground(new java.awt.Color(255, 255, 255));
         exitbtn.setText("Exit");
-        exitbtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        exitbtn.setBorder(null);
         exitbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitbtnMouseClicked(evt);
             }
         });
-        jPanel2.add(exitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 161, 30));
-
-        viewbtn1.setBackground(new java.awt.Color(0, 0, 102));
-        viewbtn1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        viewbtn1.setForeground(new java.awt.Color(255, 255, 255));
-        viewbtn1.setText("View and Update Record");
-        viewbtn1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        viewbtn1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                viewbtn1MouseClicked(evt);
-            }
-        });
-        viewbtn1.addActionListener(new java.awt.event.ActionListener() {
+        exitbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewbtn1ActionPerformed(evt);
+                exitbtnActionPerformed(evt);
             }
         });
-        jPanel2.add(viewbtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 160, 30));
+        jPanel2.add(exitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 510, 161, 30));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 410));
+        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/trishameiatienza/Documents/GitHub/OOPMS2/motorph-oop-master/src/main/java/Frames/Manage Employee Information.png")); // NOI18N
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 620));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -368,7 +346,7 @@ public class MainFrame extends javax.swing.JDialog {
 
     }//GEN-LAST:event_AddEmployee
 
-    private void AttendanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AttendanceMouseClicked
+    private void viewbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewbtnMouseClicked
         Employees employees = new Employees();
 
         try{
@@ -425,7 +403,7 @@ public class MainFrame extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "Select a row.", "Selection Error", JOptionPane.ERROR_MESSAGE);
         }
 
-    }//GEN-LAST:event_AttendanceMouseClicked
+    }//GEN-LAST:event_viewbtnMouseClicked
 
     private void exitbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitbtnMouseClicked
         dispose();
@@ -433,41 +411,9 @@ public class MainFrame extends javax.swing.JDialog {
         login.setVisible(true);
     }//GEN-LAST:event_exitbtnMouseClicked
 
-    private void viewbtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewbtn1MouseClicked
-        int selectedRow = table1.getSelectedRow();
-    if (selectedRow != -1) {
-        String employeeNum = table1.getModel().getValueAt(selectedRow, 0).toString(); // Assuming the first column is the employee number
-        Employees employee = new Employees();
-        
-        try {
-            // This is a hypothetical method. Replace it with your actual method to fetch employee details
-            employee = employee.getEmployeeDetails(employeeNum); // Method to implement
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Failed to load employee details.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        ViewRecordFrame viewRecordFrame = new ViewRecordFrame(employee);
-        viewRecordFrame.setVisible(true);
-    } else {
-        JOptionPane.showMessageDialog(this, "Please select a row to view or update the record.", "No Selection", JOptionPane.ERROR_MESSAGE);
-    }
-    }//GEN-LAST:event_viewbtn1MouseClicked
-
-    private void AttendanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AttendanceActionPerformed
-        Attendance attendance = new Attendance(); // Create an instance of the Attendance class
-    attendance.setVisible(true); // Make the Attendance frame visible
-    this.dispose(); // Close the current frame, optional depending on your requirements
-
-    }//GEN-LAST:event_AttendanceActionPerformed
-
-    private void viewbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtn1ActionPerformed
+    private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_viewbtn1ActionPerformed
-
-    private void deletebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_deletebtnActionPerformed
+    }//GEN-LAST:event_exitbtnActionPerformed
 
     private void payslipbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payslipbtnActionPerformed
         // TODO add your handling code here:
@@ -513,7 +459,6 @@ public class MainFrame extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Attendance;
     private javax.swing.JButton addbtn;
     private javax.swing.JButton deletebtn;
     private javax.swing.JButton exitbtn;
@@ -523,6 +468,6 @@ public class MainFrame extends javax.swing.JDialog {
     private javax.swing.JButton leavebtn;
     private javax.swing.JButton payslipbtn;
     private javax.swing.JTable table1;
-    private javax.swing.JButton viewbtn1;
+    private javax.swing.JButton viewbtn;
     // End of variables declaration//GEN-END:variables
 }

@@ -64,26 +64,21 @@ public class EmployeeMainFrame extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        TimeInBt = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         TimeOutBt = new javax.swing.JButton();
+        TimeInBt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setBackground(new java.awt.Color(51, 51, 255));
+        setBackground(new java.awt.Color(204, 204, 204));
+        setIconImage(null);
+        setMaximumSize(new java.awt.Dimension(350, 750));
         setResizable(false);
-        addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                formPropertyChange(evt);
-            }
-        });
+        setSize(new java.awt.Dimension(300, 600));
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        TimeInBt.setText("Time In");
-        TimeInBt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TimeInBtActionPerformed(evt);
-            }
-        });
+        jPanel1.setMaximumSize(new java.awt.Dimension(300, 750));
+        jPanel1.setMinimumSize(new java.awt.Dimension(300, 750));
 
         TimeOutBt.setText("Time Out");
         TimeOutBt.addActionListener(new java.awt.event.ActionListener() {
@@ -92,47 +87,65 @@ public class EmployeeMainFrame extends javax.swing.JDialog {
             }
         });
 
+        TimeInBt.setText("Time In");
+        TimeInBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TimeInBtActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(TimeInBt, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(TimeOutBt)
+                .addContainerGap(92, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(138, 138, 138)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TimeInBt, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TimeOutBt, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(TimeInBt, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(123, 123, 123)
-                            .addComponent(TimeOutBt, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
-                .addComponent(TimeInBt, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(TimeOutBt, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void TimeInBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TimeInBtActionPerformed
-        // TODO add your handling code here:
-        timeIn();
-    }//GEN-LAST:event_TimeInBtActionPerformed
 
     private void TimeOutBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TimeOutBtActionPerformed
         // TODO add your handling code here:
         timeOut();
     }//GEN-LAST:event_TimeOutBtActionPerformed
 
-    private void formPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_formPropertyChange
+    private void TimeInBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TimeInBtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_formPropertyChange
+        timeIn();
+    }//GEN-LAST:event_TimeInBtActionPerformed
     private void timeIn() {
         String formattedTime = LocalDateTime.now().toString();
         try {
@@ -166,7 +179,6 @@ private void writeToCSV(String username, String formattedTime, String type) thro
         // Write the line to the CSV file
         writer.write(line);
         writer.newLine(); // This adds a new line after the record
-        this.dispose(); // to close the current frame
     }
 }
 
@@ -210,6 +222,7 @@ private void writeToCSV(String username, String formattedTime, String type) thro
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton TimeInBt;
     private javax.swing.JButton TimeOutBt;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

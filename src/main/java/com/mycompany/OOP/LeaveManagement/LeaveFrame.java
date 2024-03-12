@@ -360,11 +360,6 @@ public class LeaveFrame extends javax.swing.JDialog {
                 applybtn(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 580, 104, 30));
 
         jButton2.setBackground(new java.awt.Color(0, 51, 102));
@@ -375,11 +370,6 @@ public class LeaveFrame extends javax.swing.JDialog {
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Close(evt);
-            }
-        });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 580, 94, 30));
@@ -395,7 +385,7 @@ public class LeaveFrame extends javax.swing.JDialog {
     private void applybtn(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_applybtn
         Employees employees = new Employees();
         
-        String filename = "RemainingLeave.csv";
+        String filename = "Remaining_Leave.csv";
         employees.setemployeenum(employeeNumTextField.getText());
         employees.setlastname(lNameTextField.getText());
         employees.setfirstname(fNameTextField.getText());
@@ -459,14 +449,6 @@ public class LeaveFrame extends javax.swing.JDialog {
     private void fNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fNameTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fNameTextFieldActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

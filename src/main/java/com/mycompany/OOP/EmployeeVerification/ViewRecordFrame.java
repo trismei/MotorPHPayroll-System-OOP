@@ -19,7 +19,6 @@ public class ViewRecordFrame extends javax.swing.JDialog {
 
     /**
      * Creates new form ViewRecordFrame
-     * @param employees
      */
     
     
@@ -448,10 +447,6 @@ public class ViewRecordFrame extends javax.swing.JDialog {
     private void Update(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Update
         Employees employees = new Employees();
         
-         String nonNumericPattern = "[^0-9]+";
-        if (lastnametf.getText().matches(nonNumericPattern) && firstnametf.getText().matches(nonNumericPattern)) {
-            
-
         employees.setemployeenum(employeenumbertf.getText());
         employees.setlastname(lastnametf.getText());
         employees.setfirstname(firstnametf.getText());
@@ -501,11 +496,6 @@ public class ViewRecordFrame extends javax.swing.JDialog {
         } catch (IOException | CsvValidationException ex) {
             Logger.getLogger(ViewRecordFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        } else {
-        // Show error message
-        JOptionPane.showMessageDialog(this, "Error: Name fields must not contain numbers.");
-        }
-        
         
         
         

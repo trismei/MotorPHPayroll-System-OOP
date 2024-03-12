@@ -45,24 +45,35 @@ public class LogInFrame extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        usernametf.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        usernametf.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 0), null));
+        usernametf.setBackground(new java.awt.Color(246, 245, 244));
+        usernametf.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
+        usernametf.setBorder(null);
+        usernametf.setCaretColor(new java.awt.Color(102, 102, 102));
+        usernametf.setSelectionColor(new java.awt.Color(62, 149, 230));
         usernametf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernametfActionPerformed(evt);
             }
         });
-        jPanel1.add(usernametf, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, 310, 30));
+        jPanel1.add(usernametf, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 260, 32));
 
-        pwtf.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        pwtf.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 0), null));
-        jPanel1.add(pwtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 310, 30));
+        pwtf.setBackground(new java.awt.Color(246, 245, 244));
+        pwtf.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
+        pwtf.setToolTipText("Password");
+        pwtf.setBorder(null);
+        pwtf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pwtfActionPerformed(evt);
+            }
+        });
+        jPanel1.add(pwtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 292, 260, 30));
 
-        loginbtn.setBackground(new java.awt.Color(0, 0, 0));
-        loginbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        loginbtn.setBackground(new java.awt.Color(250, 190, 44));
+        loginbtn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         loginbtn.setForeground(new java.awt.Color(255, 255, 255));
         loginbtn.setText("Log In");
         loginbtn.setBorder(null);
+        loginbtn.setBorderPainted(false);
         loginbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 loginbtnMouseClicked(evt);
@@ -73,13 +84,13 @@ public class LogInFrame extends javax.swing.JFrame {
                 loginbtnActionPerformed(evt);
             }
         });
-        jPanel1.add(loginbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 570, 360, 30));
+        jPanel1.add(loginbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 392, 265, 32));
 
-        exitbtn.setBackground(new java.awt.Color(153, 153, 255));
+        exitbtn.setBackground(new java.awt.Color(223, 163, 197));
         exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         exitbtn.setForeground(new java.awt.Color(255, 255, 255));
         exitbtn.setText("?");
-        exitbtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        exitbtn.setBorder(null);
         exitbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Exit(evt);
@@ -90,32 +101,33 @@ public class LogInFrame extends javax.swing.JFrame {
                 exitbtnActionPerformed(evt);
             }
         });
-        jPanel1.add(exitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, 20, 20));
+        jPanel1.add(exitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 336, 20, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Login as Employee");
+        jButton1.setBackground(new java.awt.Color(246, 245, 244));
+        jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(102, 102, 102));
+        jButton1.setText("Sign in as Employee");
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 720, 250, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 460, 210, 30));
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Desktop\\New folder\\motorph-oop-master\\src\\main\\java\\com\\mycompany\\OOP\\UserManagement\\LOGIN INTERFACE (1).png")); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 900));
+        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/trishameiatienza/Documents/GitHub/OOPMS2/motorph-oop-master/src/main/java/com/mycompany/OOP/UserManagement/Login as Admin.png")); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 620));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -167,6 +179,10 @@ public class LogInFrame extends javax.swing.JFrame {
     // Optionally, if you want to hide or dispose the current LoginFrame, you can call:
      this.dispose(); // to close the current frame
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void pwtfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwtfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pwtfActionPerformed
 
     /**
      * @param args the command line arguments

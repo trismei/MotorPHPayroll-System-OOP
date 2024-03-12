@@ -197,9 +197,6 @@ public class AddEmployeeFrame extends javax.swing.JDialog {
 
     private void AddEmployee(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddEmployee
         Employees employees = new Employees();
-        
-        String nonNumericPattern = "[^0-9]+";
-        if (lastnametf.getText().matches(nonNumericPattern) && firstnametf.getText().matches(nonNumericPattern)) {
 
         employees.setemployeenum(employeenumbertf.getText());
         employees.setlastname(lastnametf.getText());
@@ -251,11 +248,7 @@ public class AddEmployeeFrame extends javax.swing.JDialog {
         } catch (IOException ex) {
             Logger.getLogger(AddEmployeeFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        } else {
-        // Show error message
-        JOptionPane.showMessageDialog(this, "Error: Name fields must not contain numbers.");
-        }
+
     }//GEN-LAST:event_AddEmployee
 
     /**

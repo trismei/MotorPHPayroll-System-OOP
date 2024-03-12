@@ -310,6 +310,7 @@ public class DeleteRecordFrame extends javax.swing.JDialog {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 560, 80, 30));
 
         jLabel20.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/OOP/EmployeeVerification/Background.png"))); // NOI18N
         getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 600));
 
         pack();

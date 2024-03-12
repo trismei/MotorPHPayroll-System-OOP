@@ -19,11 +19,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import javax.swing.table.DefaultTableModel;
+import java.util.Calendar;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author Yennie
- */
+
+
 public class Employees {
     
     private String employeenum,firstname,lastname,birthday,address,phonenum,
@@ -295,9 +295,6 @@ public class Employees {
         new File(tempfilename).renameTo(new File(filename));
     }
     
-    
-    
-    
     public void AddEmployee(String filename) throws IOException{
         try(CSVWriter csvwriter = new CSVWriter(new FileWriter(filename, true))){
             String[] line = new String[19];
@@ -347,193 +344,221 @@ public class Employees {
         }    
     }
     
-    public float ComputeHoursWorked(String startDate, String endDate) throws FileNotFoundException, IOException, CsvValidationException, ParseException{
-        
-        SimpleDateFormat format1 = new SimpleDateFormat("M/d/yyyy HH:mm:ss");    
-        SimpleDateFormat format2 = new SimpleDateFormat("M/d/yyyy");
-        
-        Date dateIn = format2.parse(startDate);
-        Date dateOut = format2.parse(endDate);
-        
-        try(CSVReader csvreader = new CSVReader(new FileReader("Attendance Record 1.csv"))){
-            
-            String[] line;
+    public float ComputeHoursWorked(String startDate, String endDate) throws FileNotFoundException, IOException, CsvValidationException, ParseException {
+      SimpleDateFormat format1 = new SimpleDateFormat("M/d/yyyy HH:mm:ss");
+      SimpleDateFormat format2 = new SimpleDateFormat("M/d/yyyy");
+      Date dateIn = format2.parse(startDate);
+      Date dateOut = format2.parse(endDate);
+      CSVReader csvreader = new CSVReader(new FileReader("Attendance Record 1.csv"));
 
-            
-            ArrayList<String> timein = new ArrayList<>();
-            ArrayList<String> timeout = new ArrayList<>();
+      float var24;
+      try {
+         ArrayList<String> timein = new ArrayList();
+         ArrayList<String> timeout = new ArrayList();
 
-            while((line=csvreader.readNext())!=null){
-                if(line[0].equals(employeenum)){
-                    timein.add(line[1]);
-                    timeout.add(line[2]);
-                }    
+         String[] line;
+         while((line = csvreader.readNext()) != null) {
+            if (line[0].equals(this.employeenum)) {
+               timein.add(line[1]);
+               timeout.add(line[2]);
             }
-
-        int indexStart = 0;
-        for (int i =0; i< timein.size();i++){
-           Date dStart = format1.parse(timein.get(i));
-           if (dStart.compareTo(dateIn)==0){               
-                indexStart = i;                                     
-            }                                              
-        } 
-        
-
-        int indexEnd = 0;
-        for (int i =0; i< timeout.size();i++){     //limit of loop is the length on the elements in Array
-              
-           Date dEnd = format2.parse(timeout.get(i)); 
-           if (dEnd.compareTo(dateOut)==0){               
-                indexEnd=i; // saves the index within the array of end date      
-           }
-        }   
-        
-       
-            float sum= 0;                       
-            for (int k =indexStart; k<=indexEnd;k++){ // this loop gets the total time from start date to end date input
-                Date t1 = format1.parse(timein.get(k));                               
-                Date t2 = format1.parse(timeout.get(k));               
-                                                                  
-                float t = t2.getTime() - t1.getTime()-(60 * 60 * 1000);                
-                float test =  t/(60 * 60 * 1000);
-                                
-                if (test >= 47/6){ // this test is to assign a complete 8 hours if the employee is late within 10 minutes                   
-                    test = 8;                    
-                }
-                sum = sum+ test;                                                                                                 
-            }
-              
-            return sum;
-            
+         }
+         
+         if (timein.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No attendance records found for the employee.", "Notification", JOptionPane.INFORMATION_MESSAGE);
+            throw new IllegalArgumentException("No attendance records found for the employee");
         }
-       
-    }
-    public String computeSalEarned(float hw){
-        float salEarned= Float.parseFloat(hourlyrate)*hw;
-        return format("%.2f",salEarned);
-    }
+
+         int indexStart = 0;
+
+         int indexEnd;
+         for (indexEnd = 0; indexEnd < timeout.size(); ++indexEnd) {
+            Date dEnd = format1.parse(timeout.get(indexEnd)); // Use format1 for consistency
+            if (dEnd.after(dateOut)) {
+                indexEnd = indexEnd - 1; // Move back one index to get the last date before the endDate
+                break; // Exit loop once found
+            }
+        }
+
+
+         indexEnd = 0;
+
+         for(int i = 0; i < timeout.size(); ++i) {
+            Date dEnd = format2.parse((String)timeout.get(i));
+            if (dEnd.compareTo(dateOut) == 0) {
+               indexEnd = i;
+            }
+         }
+
+         float sum = 0.0F;
+
+         for(int k = indexStart; k <= indexEnd; ++k) {
+            Date t1 = format1.parse((String)timein.get(k));
+            Date t2 = format1.parse((String)timeout.get(k));
+            float t = (float)(t2.getTime() - t1.getTime() - 3600000L);
+            float test = t / 3600000.0F;
+            if (test >= 7.0F) {
+               test = 8.0F;
+            }
+
+            sum += test;
+         }
+
+         var24 = sum;
+      } catch (Throwable var20) {
+         try {
+            csvreader.close();
+         } catch (Throwable var19) {
+            var20.addSuppressed(var19);
+         }
+
+         throw var20;
+      }
+
+      csvreader.close();
+      return var24;
+   }
     
-    public String computeGross(float hw){
-        float gross =  Float.parseFloat(computeSalEarned(hw))+
-                       Float.parseFloat(riceall)+
-                       Float.parseFloat(phoneall)+
-                       Float.parseFloat(clotheall);
-        
-        return format("%.2f",gross);
+
+    // Helper function to check if two dates are on the same day
+    private boolean isSameDay(Date date1, Date date2) {
+        Calendar cal1 = Calendar.getInstance();
+        Calendar cal2 = Calendar.getInstance();
+        cal1.setTime(date1);
+        cal2.setTime(date2);
+        return cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
+               cal1.get(Calendar.MONTH) == cal2.get(Calendar.MONTH) &&
+               cal1.get(Calendar.DAY_OF_MONTH) == cal2.get(Calendar.DAY_OF_MONTH);
     }
-    
-    public String computeSSS(){
+
+    public String computeSalEarned(float hw) {
+    // Remove commas from the hourly rate string before parsing
+    String hourlyRateWithoutComma = this.hourlyrate.replaceAll(",", "");
+    float salEarned = Float.parseFloat(hourlyRateWithoutComma) * hw;
+    return String.format("%.2f", salEarned);
+}
+
+    public String computeGross(float hw) {
+        // Remove commas from all input strings before parsing
+        String salEarnedWithoutComma = this.computeSalEarned(hw).replaceAll(",", "");
+        String riceAllWithoutComma = this.riceall.replaceAll(",", "");
+        String phoneAllWithoutComma = this.phoneall.replaceAll(",", "");
+        String clotheAllWithoutComma = this.clotheall.replaceAll(",", "");
+
+        float gross = Float.parseFloat(salEarnedWithoutComma) + 
+                      Float.parseFloat(riceAllWithoutComma) + 
+                      Float.parseFloat(phoneAllWithoutComma) + 
+                      Float.parseFloat(clotheAllWithoutComma);
+        return String.format("%.2f", gross);
+    }
+
+    public String computeSSS() {
+        // Remove commas from the basic salary string before parsing
+        String basicSalaryWithoutComma = this.basicsalary.replaceAll(",", "");
+        float sal = Float.parseFloat(basicSalaryWithoutComma);
         double sss;
-         
-        float sal = Float.parseFloat(basicsalary);
-         
-         
-         if(sal<=3250){
-                sss = 135;
+        if (sal <= 3250.0F) {
+            sss = 135.0;
+        } else if (sal > 3250.0F & sal <= 24750.0F) {
+            float mod;
+            float multiplier;
+            if (sal % 1000.0F == 250.0F | sal % 1000.0F == 750.0F) {
+                mod = (sal - 3250.0F) % 500.0F;
+                multiplier = (sal - 3250.0F - mod) / 500.0F;
+                sss = 22.5 * (double)multiplier + 135.0;
+            } else {
+                mod = (sal - 3250.0F) % 500.0F;
+                multiplier = (sal - 3250.0F - mod) / 500.0F;
+                sss = 22.5 * (double)(multiplier + 1.0F) + 135.0;
             }
-            else if(sal>3250 & sal<=24750) {
-               if(sal%1000==250 |sal%1000==750 ){// this check whether the salary is in the lower/upper bound of range. 
-                   float mod = (sal-3250)%500; // after deducting 3250, in every 500 increment, the sss increases by 22.5
-                    float multiplier = ((sal-3250-mod)/500);              
-                    sss = 22.5*(multiplier)+135;                        
-               }
-                else{// this applies the normal formule is salary falls within the range
-                    float mod = (sal-3250)%500; 
-                    float multiplier = ((sal-3250-mod)/500);              
-                    sss = 22.5*(multiplier+1)+135;           
-               }
-            }
-            else{
-                sss = 1125;
-            }
-           
-            return format("%.2f",sss);  
+        } else {
+            sss = 1125.0;
+        }
+
+        return String.format("%.2f", sss);
     }
-    
-    public String computePH(){
+
+    public String computePH() {
+        // Remove commas from the basic salary string before parsing
+        String basicSalaryWithoutComma = this.basicsalary.replaceAll(",", "");
+        float sal = Float.parseFloat(basicSalaryWithoutComma);
         double ph;
+        if (sal <= 10000.0F) {
+            ph = 150.0;
+        } else if (sal > 10000.0F & sal < 60000.0F) {
+            ph = (double)sal * 0.03 / 2.0;
+        } else {
+            ph = 900.0;
+        }
 
-        float sal = Float.parseFloat(basicsalary);
-         
-
-        if(sal<=10000){//if-elseif-else statement checks the range of salary and applies formula in each range
-           ph = 300/2;
-        }
-        else if (sal>10000 & sal<60000){
-           ph = sal*(0.03)/2;
-        }
-        else{
-           ph = 1800/2;
-        }
-       
-       return format("%.2f",ph);
+        return String.format("%.2f", ph);
     }
-    
-    public String computePGB(){
+
+    public String computePGB() {
+        // Remove commas from the basic salary string before parsing
+        String basicSalaryWithoutComma = this.basicsalary.replaceAll(",", "");
+        float sal = Float.parseFloat(basicSalaryWithoutComma);
         double pagibig;
-        float sal = Float.parseFloat(basicsalary);
-        
-        if(sal>1000 & sal<=1500){//if-else statement checks the range of salary and applies formula in each rang
-            pagibig = sal*(float)0.01;
-        } 
-        else{
-            if(sal*0.02 <100){// this nested if-else statement provides the pagibig to be 100 if the values exceeds 100
-              pagibig= sal*(float)0.02;
-            }
-            else{
-                pagibig = 100;
-            }
+        if (sal > 1000.0F & sal <= 1500.0F) {
+            pagibig = (double)(sal * 0.01F);
+        } else if ((double)sal * 0.02 < 100.0) {
+            pagibig = (double)(sal * 0.02F);
+        } else {
+            pagibig = 100.0;
         }
-        
-        return format("%.2f",pagibig);    
+
+        return String.format("%.2f", pagibig);
     }
-    
-    public String computeTax(){
+
+    public String computeTax() {
+        // Remove commas from the basic salary, SSS, PH, and PGB strings before parsing
+        String basicSalaryWithoutComma = this.basicsalary.replaceAll(",", "");
+        String sssWithoutComma = this.computeSSS().replaceAll(",", "");
+        String phWithoutComma = this.computePH().replaceAll(",", "");
+        String pgbWithoutComma = this.computePGB().replaceAll(",", "");
+
+        float sal = Float.parseFloat(basicSalaryWithoutComma);
+        float sss = Float.parseFloat(sssWithoutComma);
+        float pagibig = Float.parseFloat(pgbWithoutComma);
+        float ph = Float.parseFloat(phWithoutComma);
+        float taxable = sal - sss - pagibig - ph;
         float tax;
-        float sal = Float.parseFloat(basicsalary);
-        float sss = Float.parseFloat(computeSSS());
-        float pagibig = Float.parseFloat(computePGB());
-        float ph = Float.parseFloat(computePH());
-        
-        float taxable = sal-sss-pagibig-ph;
-       
-         if(sal <=20832){//if-elseif-else statement checks the range of taxable income and applies formula in each range 
-                tax = 0;
-            }
-            else if(sal>20832 & sal<33333){
-                tax = (float) ((taxable-20833)*0.2);               
-            }
-            else if(sal>=33333 & sal< 66667){
-                tax = (float) ((taxable-33333)*0.25+2500);
-            }
-            else if(sal>=66667 & sal< 166667){
-                tax = (float) ((taxable-66667)*0.3+10833);
-            }
-            else if(sal>=166667 & sal< 666667){
-                tax = (float) ((taxable-166667)*0.32+40833.33);
-            }
-            else{
-                tax = (float) ((sal-666667)*0.35+200833.33);
-            }
-           
-            
-            return format("%.2f",tax);
+        if (sal <= 20832.0F) {
+            tax = 0.0F;
+        } else if (sal > 20832.0F & sal < 33333.0F) {
+            tax = (float)((double)(taxable - 20833.0F) * 0.2);
+        } else if (sal >= 33333.0F & sal < 66667.0F) {
+            tax = (float)((double)(taxable - 33333.0F) * 0.25 + 2500.0);
+        } else if (sal >= 66667.0F & sal < 166667.0F) {
+            tax = (float)((double)(taxable - 66667.0F) * 0.3 + 10833.0);
+        } else if (sal >= 166667.0F & sal < 666667.0F) {
+            tax = (float)((double)(taxable - 166667.0F) * 0.32 + 40833.33);
+        } else {
+            tax = (float)((double)(sal - 666667.0F) * 0.35 + 200833.33);
+        }
+
+        return String.format("%.2f", tax);
     }
-    
-    public String computeTotalDeduct(){
-        
-        float tax = Float.parseFloat(computeTax());
-        float sss = Float.parseFloat(computeSSS());
-        float pagibig = Float.parseFloat(computePGB());
-        float ph = Float.parseFloat(computePH());
-        
-        return format("%.2f",sss+ph+pagibig+tax);
+
+    public String computeTotalDeduct() {
+        // Remove commas from the SSS, PH, PGB, and Tax strings before parsing
+        String sssWithoutComma = this.computeSSS().replaceAll(",", "");
+        String phWithoutComma = this.computePH().replaceAll(",", "");
+        String pgbWithoutComma = this.computePGB().replaceAll(",", "");
+        String taxWithoutComma = this.computeTax().replaceAll(",", "");
+
+        float tax = Float.parseFloat(taxWithoutComma);
+        float sss = Float.parseFloat(sssWithoutComma);
+        float pagibig = Float.parseFloat(pgbWithoutComma);
+        float ph = Float.parseFloat(phWithoutComma);
+        return String.format("%.2f", sss + ph + pagibig + tax);
     }
-    
-    public String computeNet(float hw){
-        float net = Float.parseFloat(computeGross(hw))-Float.parseFloat(computeTotalDeduct());
-        return format("%.2f",net);
+
+    public String computeNet(float hw) {
+        float net = Float.parseFloat(this.computeGross(hw)) - Float.parseFloat(this.computeTotalDeduct());
+        return String.format("%.2f", net);
     }
+
     
     public boolean LeaveIsAllowed(String filename,String leaveType, String days) throws FileNotFoundException, IOException, CsvValidationException{
         
@@ -584,28 +609,30 @@ public class Employees {
             String[] line;
 
             
-            try (CSVReader csvreader = new CSVReader(new FileReader(filename))) {
-                String[] header =csvreader.readNext();
-                csvwriter.writeNext(header);
-                
-                while((line=csvreader.readNext())!=null){
-                    if(line[0].equals(employeenum) & leaveType.equals("Sick Leave")){
+            CSVReader csvreader = new CSVReader(new FileReader(filename));        
+            
+            String[] header =csvreader.readNext();
+            csvwriter.writeNext(header);
+            
+            while((line=csvreader.readNext())!=null){
+                if(line[0].equals(employeenum) & leaveType.equals("Sick Leave")){
+                    
+                    line[3] = String.valueOf(Integer.parseInt(line[3])-Integer.parseInt(days));
                         
-                        line[3] = String.valueOf(Integer.parseInt(line[3])-Integer.parseInt(days));
-                        
-                    }
-                    else if(line[0].equals(employeenum) & leaveType.equals("Vacation Leave")){
-                        line[4] = String.valueOf(Integer.parseInt(line[4])-Integer.parseInt(days));
-                    }
-                    else if(line[0].equals(employeenum) & leaveType.equals("Sick Leave")){
-                        line[5] = String.valueOf(Integer.parseInt(line[5])-Integer.parseInt(days));
-                    }
-                    
-                    
-                    csvwriter.writeNext(line);
-                    
                 }
-            }
+                else if(line[0].equals(employeenum) & leaveType.equals("Vacation Leave")){
+                    line[4] = String.valueOf(Integer.parseInt(line[4])-Integer.parseInt(days));
+                }
+                else if(line[0].equals(employeenum) & leaveType.equals("Sick Leave")){
+                    line[5] = String.valueOf(Integer.parseInt(line[5])-Integer.parseInt(days));
+                }
+                
+
+               csvwriter.writeNext(line); 
+               
+            } 
+            
+            csvreader.close();
                
         }
         finally{
@@ -617,7 +644,7 @@ public class Employees {
     
     public void createLeaveApplication(String dateFiled, String leaveType, String days,String start, String end) throws IOException, CsvValidationException{
         
-        String file="RemainingLeave.csv";
+        String file="Remaining_Leave.csv";
         
         CSVReader csvreader = new CSVReader(new FileReader(file));
         String [] line;
@@ -671,38 +698,6 @@ public class Employees {
             
         }
     }
-public Employees getEmployeeDetails(String employeeNum) throws IOException, CsvValidationException {
-    String filename = "MotorPH Employee Data.csv"; // Ensure this path is correct
-    try (CSVReader csvReader = new CSVReader(new FileReader(filename))) {
-        String[] nextLine;
-        while ((nextLine = csvReader.readNext()) != null) {
-            if (nextLine[0].equals(employeeNum)) { // Assuming the employee number is in the first column
-                // Assuming the order and structure of your CSV matches your Employees constructor
-                return new Employees(
-                    nextLine[0], // employeenum
-                    nextLine[2], // firstname
-                    nextLine[1], // lastname
-                    nextLine[3], // birthday
-                    nextLine[4], // address
-                    nextLine[5], // phonenum
-                    nextLine[6], // sssnum
-                    nextLine[7], // phnum
-                    nextLine[8], // tin
-                    nextLine[9], // pgbnum
-                    nextLine[10], // status
-                    nextLine[11], // position
-                    nextLine[12], // supervisor
-                    nextLine[13], // basicsalary
-                    nextLine[14], // riceall
-                    nextLine[15], // phoneall
-                    nextLine[16], // clotheall
-                    nextLine[17], // smrate
-                    nextLine[18]  // hourlyrate
-                        
-                              );
-            }
-        }
-    }
-    return null; // Employee not found
-}
+    
+    
 }

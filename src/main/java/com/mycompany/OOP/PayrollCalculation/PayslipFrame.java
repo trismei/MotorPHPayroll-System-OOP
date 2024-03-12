@@ -161,12 +161,16 @@ public class PayslipFrame extends javax.swing.JDialog {
         closebtn = new javax.swing.JButton();
         jLabel39 = new javax.swing.JLabel();
 
+        jScrollPane1.setBackground(new java.awt.Color(224, 167, 199));
         jScrollPane1.setViewportView(jEditorPane1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(217, 136, 189));
         setResizable(false);
 
+        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(570, 700));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -210,8 +214,8 @@ public class PayslipFrame extends javax.swing.JDialog {
         statusTF.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(statusTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 286, 387, -1));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel8.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Philhealth Number:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 205, -1, -1));
 
@@ -219,8 +223,8 @@ public class PayslipFrame extends javax.swing.JDialog {
         positionTF.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(positionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 314, 387, -1));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("TIN Number:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 233, -1, -1));
 
@@ -228,8 +232,8 @@ public class PayslipFrame extends javax.swing.JDialog {
         supervisorTF.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(supervisorTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 342, 387, -1));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel10.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("PAGIBIG Number:");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 261, -1, -1));
 
@@ -237,8 +241,8 @@ public class PayslipFrame extends javax.swing.JDialog {
         employeeNumberTF.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(employeeNumberTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 6, 387, -1));
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel11.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Status:");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 289, -1, -1));
 
@@ -246,8 +250,8 @@ public class PayslipFrame extends javax.swing.JDialog {
         basicSalaryTF.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(basicSalaryTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 370, 387, -1));
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel12.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Position:");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 317, -1, -1));
 
@@ -255,8 +259,8 @@ public class PayslipFrame extends javax.swing.JDialog {
         riceTF.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(riceTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 398, 387, -1));
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Immediate Supervisor:");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 348, -1, -1));
 
@@ -264,8 +268,8 @@ public class PayslipFrame extends javax.swing.JDialog {
         phoneTF.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(phoneTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 426, 387, -1));
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel14.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Basic Salary:");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 373, -1, -1));
 
@@ -273,8 +277,8 @@ public class PayslipFrame extends javax.swing.JDialog {
         clothingTF.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(clothingTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 454, 387, -1));
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel15.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Rice Subsidy:");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 401, -1, -1));
 
@@ -282,48 +286,48 @@ public class PayslipFrame extends javax.swing.JDialog {
         semRateTF.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(semRateTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 482, 387, -1));
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel16.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Phone Allowance:");
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 429, -1, -1));
 
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel17.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Clothing Allowance:");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 457, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Employee Number:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 9, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Last Name: ");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 37, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("First Name:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 65, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Birthday:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 93, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Address:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 121, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Phone Number:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 149, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("SSS Number:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 177, -1, -1));
 
@@ -331,13 +335,13 @@ public class PayslipFrame extends javax.swing.JDialog {
         hourlyRateTF.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(hourlyRateTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 510, 387, -1));
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel18.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Semi-monthly Rate:");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 482, -1, -1));
 
-        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel19.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Hourly Rate:");
         jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 510, -1, -1));
 
@@ -351,153 +355,188 @@ public class PayslipFrame extends javax.swing.JDialog {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 550, 80, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 610, 80, 30));
 
         jLabel38.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel38.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel38.setForeground(new java.awt.Color(0, 0, 102));
-        jPanel1.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 600));
+        jLabel38.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel38.setIcon(new javax.swing.ImageIcon("/Users/trishameiatienza/Documents/GitHub/OOPMS2/motorph-oop-master/src/main/java/com/mycompany/OOP/PayrollCalculation/Background.png")); // NOI18N
+        jLabel38.setPreferredSize(new java.awt.Dimension(642, 700));
+        jPanel1.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 700));
 
         jTabbedPane1.addTab("Employee Details", jPanel1);
 
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel6.setBackground(new java.awt.Color(255, 251, 181));
-        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204), 5));
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(217, 136, 189), 5));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel28.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        jLabel28.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(0, 0, 102));
         jLabel28.setText("Earnings");
-        jPanel6.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 11, 104, -1));
+        jPanel6.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 104, -1));
         jPanel6.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 240, -1, -1));
 
         jLabel40.setText("Salary Period:");
-        jPanel6.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 36, 104, -1));
+        jPanel6.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 104, -1));
 
         jLabel41.setText("Salary Earned:");
-        jPanel6.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 64, 104, -1));
+        jPanel6.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 104, -1));
 
         jLabel42.setText("Rice Allowance:");
-        jPanel6.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 92, 104, -1));
+        jPanel6.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 104, -1));
 
         jLabel43.setText("Phone Allowance:");
-        jPanel6.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 120, 110, -1));
+        jPanel6.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 110, -1));
 
         jLabel44.setText("Clothing Allowance:");
-        jPanel6.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 145, 120, -1));
+        jPanel6.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 120, -1));
 
-        jLabel45.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel45.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(0, 0, 102));
         jLabel45.setText("Gross Salary:");
-        jPanel6.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 182, 104, -1));
+        jPanel6.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 104, -1));
+
+        salperiodtf.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 12)); // NOI18N
         jPanel6.add(salperiodtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 33, 170, -1));
+
+        salearnedtf.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 12)); // NOI18N
         jPanel6.add(salearnedtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 61, 170, -1));
+
+        riceallowtf.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 12)); // NOI18N
         jPanel6.add(riceallowtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 89, 170, -1));
+
+        phoneallowtf.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 12)); // NOI18N
         jPanel6.add(phoneallowtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 117, 170, -1));
+
+        clothingallowtf.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 12)); // NOI18N
         jPanel6.add(clothingallowtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 145, 170, -1));
+
+        grosstf.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
         jPanel6.add(grosstf, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 179, 170, -1));
 
-        jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel30.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(0, 0, 102));
         jLabel30.setText("Deductions");
-        jPanel6.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 252, 104, -1));
+        jPanel6.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 104, -1));
 
         jLabel31.setText("SSS:");
-        jPanel6.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 280, 104, -1));
+        jPanel6.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 104, -1));
 
         jLabel33.setText("Philhealth:");
-        jPanel6.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 308, 104, -1));
+        jPanel6.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 104, -1));
 
         jLabel34.setText("PAGIBIG:");
-        jPanel6.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 336, 104, -1));
+        jPanel6.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 104, -1));
 
         jLabel35.setText("Witholding Tax:");
-        jPanel6.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 364, 104, -1));
+        jPanel6.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 104, -1));
 
-        jLabel36.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel36.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(0, 0, 102));
         jLabel36.setText("Total Deductions:");
-        jPanel6.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 407, 104, -1));
+        jPanel6.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 104, -1));
 
-        jLabel37.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel37.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(0, 0, 102));
         jLabel37.setText("Net Salary:");
-        jPanel6.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 457, 104, -1));
+        jPanel6.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 104, -1));
+
+        nettf.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 12)); // NOI18N
         jPanel6.add(nettf, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 457, 170, -1));
+
+        ssstf.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 12)); // NOI18N
         jPanel6.add(ssstf, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 274, 170, -1));
+
+        phtf.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 12)); // NOI18N
         jPanel6.add(phtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 302, 170, -1));
+
+        pgbtf.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 12)); // NOI18N
         jPanel6.add(pgbtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 333, 170, -1));
+
+        taxtf.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 12)); // NOI18N
         jPanel6.add(taxtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 361, 170, -1));
+
+        tdeducttf.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 12)); // NOI18N
         jPanel6.add(tdeducttf, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 404, 170, -1));
 
-        jLabel46.setFont(new java.awt.Font("Segoe UI", 2, 8)); // NOI18N
-        jLabel46.setText("**this payslip is auto-generated by the system**");
-        jPanel6.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, 190, 10));
+        jLabel46.setFont(new java.awt.Font("Helvetica Neue", 2, 8)); // NOI18N
+        jLabel46.setText("Auto-generated by the system.");
+        jPanel6.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 110, 10));
 
         jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 340, 520));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204), 5));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(217, 136, 189), 5));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 0, 12));
         jLabel20.setText("Start Date:");
         jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 45, -1, -1));
 
+        jLabel21.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
         jLabel21.setText("Year:");
         jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 70, -1, -1));
 
+        jLabel22.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
         jLabel22.setText("Month:");
         jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 98, -1, -1));
 
+        jLabel23.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
         jLabel23.setText("Date:");
         jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 126, -1, -1));
 
+        y1cb.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
         y1cb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "2022" }));
-        y1cb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                y1cbActionPerformed(evt);
-            }
-        });
         jPanel2.add(y1cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 67, 70, -1));
 
+        m1cb.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
         m1cb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "9", "10", "11", "12" }));
         jPanel2.add(m1cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 95, 70, -1));
 
+        d1cb.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
         d1cb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         jPanel2.add(d1cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 123, 70, -1));
 
-        jLabel24.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jLabel24.setText("Select Payslip Date Range");
+        jLabel24.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel24.setText("Date Range");
         jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel25.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(0, 0, 12));
         jLabel25.setText("End Date:");
         jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 163, -1, -1));
 
+        jLabel26.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
         jLabel26.setText("Year:");
         jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 188, -1, -1));
 
+        jLabel27.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
         jLabel27.setText("Month:");
         jPanel2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 216, -1, -1));
 
+        m2cb.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
         m2cb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "9", "10", "11", "12" }));
         jPanel2.add(m2cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 213, 70, -1));
 
+        y2cb.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
         y2cb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "2022" }));
         jPanel2.add(y2cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 185, 70, -1));
 
+        jLabel29.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
         jLabel29.setText("Date:");
         jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 241, -1, -1));
 
+        d2cb.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
         d2cb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         jPanel2.add(d2cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 241, 70, -1));
 
         jPanel5.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 160, 280));
 
         showpaybtn.setBackground(new java.awt.Color(0, 0, 102));
-        showpaybtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        showpaybtn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         showpaybtn.setForeground(new java.awt.Color(255, 255, 255));
         showpaybtn.setText("Show Payslip");
         showpaybtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -506,10 +545,10 @@ public class PayslipFrame extends javax.swing.JDialog {
                 showpaybtnMouseClicked(evt);
             }
         });
-        jPanel5.add(showpaybtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 160, 30));
+        jPanel5.add(showpaybtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 160, 30));
 
         closebtn.setBackground(new java.awt.Color(0, 0, 102));
-        closebtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        closebtn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         closebtn.setForeground(new java.awt.Color(255, 255, 255));
         closebtn.setText("Close");
         closebtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -519,7 +558,9 @@ public class PayslipFrame extends javax.swing.JDialog {
             }
         });
         jPanel5.add(closebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 550, 70, 30));
-        jPanel5.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 600));
+
+        jLabel39.setIcon(new javax.swing.ImageIcon("/Users/trishameiatienza/Documents/GitHub/OOPMS2/motorph-oop-master/src/main/java/com/mycompany/OOP/PayrollCalculation/Background.png")); // NOI18N
+        jPanel5.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 670));
 
         jTabbedPane1.addTab("Payslip", jPanel5);
 
@@ -527,11 +568,17 @@ public class PayslipFrame extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -604,10 +651,6 @@ public class PayslipFrame extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void y1cbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_y1cbActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_y1cbActionPerformed
 
     /**
      * @param args the command line arguments

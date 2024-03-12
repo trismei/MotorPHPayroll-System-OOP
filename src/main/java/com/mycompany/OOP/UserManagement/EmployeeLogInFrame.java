@@ -12,6 +12,8 @@ import static java.lang.System.exit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import Frames.MainFrame;
+
 
 /**
  *
@@ -35,10 +37,10 @@ public class EmployeeLogInFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        usernametf = new javax.swing.JTextField();
-        pwtf = new javax.swing.JPasswordField();
-        loginbtn = new javax.swing.JButton();
-        exitbtn = new javax.swing.JButton();
+        exitbtn1 = new javax.swing.JButton();
+        usernametf1 = new javax.swing.JTextField();
+        loginbtn1 = new javax.swing.JButton();
+        pwtf1 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
@@ -47,121 +49,95 @@ public class EmployeeLogInFrame extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        usernametf.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        usernametf.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 0), null));
-        usernametf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernametfActionPerformed(evt);
-            }
-        });
-        jPanel1.add(usernametf, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, 310, 30));
-
-        pwtf.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        pwtf.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 0), null));
-        jPanel1.add(pwtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 310, 30));
-
-        loginbtn.setBackground(new java.awt.Color(0, 0, 0));
-        loginbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        loginbtn.setForeground(new java.awt.Color(255, 255, 255));
-        loginbtn.setText("Log In");
-        loginbtn.setBorder(null);
-        loginbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        exitbtn1.setBackground(new java.awt.Color(223, 163, 197));
+        exitbtn1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        exitbtn1.setForeground(new java.awt.Color(255, 255, 255));
+        exitbtn1.setText("?");
+        exitbtn1.setBorder(null);
+        exitbtn1.setBorderPainted(false);
+        exitbtn1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                loginbtnMouseClicked(evt);
+                exitbtn1Exit(evt);
             }
         });
-        loginbtn.addActionListener(new java.awt.event.ActionListener() {
+        exitbtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginbtnActionPerformed(evt);
+                exitbtn1ActionPerformed(evt);
             }
         });
-        jPanel1.add(loginbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 570, 360, 40));
+        jPanel1.add(exitbtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 336, 20, -1));
 
-        exitbtn.setBackground(new java.awt.Color(153, 153, 255));
-        exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        exitbtn.setForeground(new java.awt.Color(255, 255, 255));
-        exitbtn.setText("?");
-        exitbtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        exitbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        usernametf1.setBackground(new java.awt.Color(246, 245, 244));
+        usernametf1.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
+        usernametf1.setBorder(null);
+        usernametf1.setCaretColor(new java.awt.Color(102, 102, 102));
+        usernametf1.setSelectionColor(new java.awt.Color(62, 149, 230));
+        usernametf1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernametf1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(usernametf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 260, 32));
+
+        loginbtn1.setBackground(new java.awt.Color(250, 190, 44));
+        loginbtn1.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        loginbtn1.setForeground(new java.awt.Color(255, 255, 255));
+        loginbtn1.setText("Log In");
+        loginbtn1.setBorder(null);
+        loginbtn1.setBorderPainted(false);
+        loginbtn1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Exit(evt);
+                loginbtn1MouseClicked(evt);
             }
         });
-        exitbtn.addActionListener(new java.awt.event.ActionListener() {
+        loginbtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitbtnActionPerformed(evt);
+                loginbtn1ActionPerformed(evt);
             }
         });
-        jPanel1.add(exitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, 20, 20));
+        jPanel1.add(loginbtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 392, 265, 32));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Login as Admin");
+        pwtf1.setBackground(new java.awt.Color(246, 245, 244));
+        pwtf1.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
+        pwtf1.setToolTipText("Password");
+        pwtf1.setBorder(null);
+        pwtf1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pwtf1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(pwtf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 292, 260, 30));
+
+        jButton1.setBackground(new java.awt.Color(246, 245, 244));
+        jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(102, 102, 102));
+        jButton1.setText("Sign in as Admin");
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 720, 200, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 460, 210, 30));
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Desktop\\New folder\\motorph-oop-master\\src\\main\\java\\com\\mycompany\\OOP\\UserManagement\\LOGIN INTERFACE (1).png")); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 900));
+        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/trishameiatienza/Documents/GitHub/OOPMS2/motorph-oop-master/src/main/java/com/mycompany/OOP/UserManagement/Login as Employee.png")); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 620));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void loginbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginbtnMouseClicked
-        // Correctly instantiate the EmployeeLogIn object
-     EmployeeLogIn employeeLogin = new EmployeeLogIn(); // Instantiate the login object
-    employeeLogin.setusername(usernametf.getText());   // Set the username from the input field
-    employeeLogin.setpassword(pwtf.getPassword());     // Set the password from the input field
-
-    try {
-        if (employeeLogin.isAuthenticated()) { // Check authentication
-            dispose(); // Close the login window
-            String authenticatedUsername = employeeLogin.getUsername(); // Get the authenticated username
-            EmployeeMainFrame mainframe = new EmployeeMainFrame(authenticatedUsername); // Pass the username to the mainframe
-            mainframe.setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(this, "Username or Password is incorrect. Try Again.", "Invalid Credentials", JOptionPane.ERROR_MESSAGE);
-    }
-    } catch (IOException | CsvValidationException ex) {
-        Logger.getLogger(EmployeeLogInFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    
-    
-    
-    }//GEN-LAST:event_loginbtnMouseClicked
-
-    private void Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Exit
-        JOptionPane.showMessageDialog(null, "Contact through email");
-    }//GEN-LAST:event_Exit
-
-    private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_exitbtnActionPerformed
-
-    private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_loginbtnActionPerformed
-
-    private void usernametfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernametfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usernametfActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // Assuming EmployeeLogInFrame is another JFrame that needs to be shown.
@@ -171,6 +147,47 @@ public class EmployeeLogInFrame extends javax.swing.JFrame {
     // Optionally, if you want to hide or dispose the current LoginFrame, you can call:
      this.dispose(); // to close the current frame
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void exitbtn1Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitbtn1Exit
+        JOptionPane.showMessageDialog(null, "Contact through email");
+    }//GEN-LAST:event_exitbtn1Exit
+
+    private void exitbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_exitbtn1ActionPerformed
+
+    private void usernametf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernametf1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernametf1ActionPerformed
+
+    private void loginbtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginbtn1MouseClicked
+        LogIn login = new LogIn();
+        login.setusername(usernametf1.getText());
+        login.setpassword(pwtf1.getPassword());
+
+        try {
+            if(login.isAuthenticated()){
+                //*JOptionPane.showMessageDialog(this, "Login Successful!");
+                dispose();//
+                //setVisible(false);
+                MainFrame mainframe = new MainFrame();
+                mainframe.setVisible(true);
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Username or Password is incorrect. Try Again.", "Invalid Credentials", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (IOException | CsvValidationException ex) {
+            Logger.getLogger(LogInFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_loginbtn1MouseClicked
+
+    private void loginbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginbtn1ActionPerformed
+
+    private void pwtf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwtf1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pwtf1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,12 +225,12 @@ public class EmployeeLogInFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton exitbtn;
+    private javax.swing.JButton exitbtn1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton loginbtn;
-    private javax.swing.JPasswordField pwtf;
-    private javax.swing.JTextField usernametf;
+    private javax.swing.JButton loginbtn1;
+    private javax.swing.JPasswordField pwtf1;
+    private javax.swing.JTextField usernametf1;
     // End of variables declaration//GEN-END:variables
 }

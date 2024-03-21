@@ -29,7 +29,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
-        <exec.mainClass>com.mycompany.OOP.UserManagement.LogInFrame</exec.mainClass>
+        <exec.mainClass>com.motorph.payrollsystem.UserManagement.LogInFrame</exec.mainClass>
     </properties>
     <name>MotorPHPayrollSystem</name>
 </project>

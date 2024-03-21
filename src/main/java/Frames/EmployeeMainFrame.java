@@ -9,8 +9,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import com.mycompany.OOP.UserManagement.EmployeeLogInFrame;
-import com.mycompany.OOP.EmployeeVerification.Employees;
+import com.motorph.payrollsystem.UserManagement.EmployeeLogInFrame;
+import com.motorph.payrollsystem.EmployeeManagement.Employees;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import java.io.FileNotFoundException;
@@ -24,13 +24,15 @@ import java.awt.event.ActionListener;
 import java.io.FileWriter;
 import java.time.LocalDateTime;
 
-
 /**
  *
- * @author Yennie
+ * @author lhenard
  */
+
+
+
 public class EmployeeMainFrame extends javax.swing.JDialog {
-    private String authenticatedUsername; // This should be the only username variable in this class.
+    private String authenticatedUsername; 
    
     public EmployeeMainFrame() throws IOException, FileNotFoundException, CsvValidationException {
         initComponents();
@@ -78,14 +80,22 @@ public class EmployeeMainFrame extends javax.swing.JDialog {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        TimeInBt.setBackground(new java.awt.Color(249, 182, 17));
+        TimeInBt.setFont(new java.awt.Font("Thonburi", 1, 13)); // NOI18N
+        TimeInBt.setForeground(new java.awt.Color(255, 255, 255));
         TimeInBt.setText("Time In");
+        TimeInBt.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         TimeInBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TimeInBtActionPerformed(evt);
             }
         });
 
+        TimeOutBt.setBackground(new java.awt.Color(249, 182, 17));
+        TimeOutBt.setFont(new java.awt.Font("Thonburi", 1, 13)); // NOI18N
+        TimeOutBt.setForeground(new java.awt.Color(255, 255, 255));
         TimeOutBt.setText("Time Out");
+        TimeOutBt.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         TimeOutBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TimeOutBtActionPerformed(evt);
@@ -97,21 +107,21 @@ public class EmployeeMainFrame extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(TimeInBt, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(123, 123, 123)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TimeInBt, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TimeOutBt, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
-                .addComponent(TimeInBt, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addComponent(TimeInBt, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(TimeOutBt, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(85, 85, 85))
@@ -138,6 +148,7 @@ public class EmployeeMainFrame extends javax.swing.JDialog {
         try {
             writeToCSV(authenticatedUsername, formattedTime, "IN"); // Use authenticatedUsername here
             JOptionPane.showMessageDialog(this, "Clocked in at: " + formattedTime);
+
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error writing to CSV: " + e.getMessage());
         }
@@ -153,7 +164,6 @@ public class EmployeeMainFrame extends javax.swing.JDialog {
         }
 }
 
-// You'll need to implement the writeToCSV method if it doesn't exist already.
 private void writeToCSV(String username, String formattedTime, String type) throws IOException {
     // The path to the CSV file
     Path csvFilePath = Paths.get("time_data.csv");

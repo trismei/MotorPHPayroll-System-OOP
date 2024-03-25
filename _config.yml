@@ -1,0 +1,14 @@
+# Site settings
+title: Motor Ph Payroll System 
+description: >- 
+  This site documents the MotorPH Payroll and Leave Management System, a Java-based solution for streamlined payroll processing and leave management. Here, users can find guides and technical details to effectively use and understand the system.
+
+# Theme settings
+theme: jekyll-theme-minimal
+
+# Optional settings
+twitter_username: yourusername
+github_username: yourusername
+
+# Build settings
+markdown: kramdown

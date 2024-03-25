@@ -65,3 +65,17 @@ The system includes an integrated leave management module, allowing employees to
 - **Submitting the Application:** Once the form is complete, submit your application for review. The system automatically notifies your manager or the HR department for approval.
 - **Tracking Leave Status:** You can track the status of your leave application and view your remaining leave balances in the "Leave" section. Upon approval or rejection, you will receive a notification through the system.
 
+## Technical Information
+
+### Use Case Diagram for MotorPH's Payroll System
+![Use Case Diagram](https://raw.githubusercontent.com/trismei/OOPMS2/1b5b46349a932614a2d27d11642c9ae437231871/Use%20Case%20-%20MotorPH's%20Payroll%20System.png)
+
+
+### Class Diagrams
+![Class Diagrams](https://raw.githubusercontent.com/trismei/OOPMS2/1b5b46349a932614a2d27d11642c9ae437231871/Class%20Diagrams.png)
+
+
+### Test Case
+![Test Case](https://raw.githubusercontent.com/trismei/OOPMS2/1b5b46349a932614a2d27d11642c9ae437231871/Test%20Case.png)
+
+

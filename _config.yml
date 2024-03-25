@@ -4,7 +4,9 @@ description: >-
   This site documents the MotorPH Payroll and Leave Management System, a Java-based solution for streamlined payroll processing and leave management. Here, users can find guides and technical details to effectively use and understand the system.
 
 # Theme settings
-theme: minima
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+- jekyll-remote-theme # add this line to the plugins list if you already have one
 
 # Build settings
 markdown: kramdown
